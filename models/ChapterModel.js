@@ -7,6 +7,10 @@ const ChapterModel = sequelize.define('ChapterModel', {
     type: DataTypes.STRING,
     primaryKey: true,
   },
+  id_chapter: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   title: {
     type: DataTypes.STRING,
     allowNull: false,

@@ -103,7 +103,6 @@ app.get('/animelists/:id/animes/:mal_id', async (req, res) => {
     res.status(500).json({ error: 'No se pudo obtener el anime' });
   }
 });
- 
 
 // Editar el titulo de una lista de animes
 app.put('/animelists/:animelistId', async (req, res) => {
@@ -195,7 +194,7 @@ app.post(
   '/animelists/:animelistId/animes/:mal_id/chapters',
   async (req, res) => {
     const { animelistId, mal_id } = req.params;
-    const { chapter_mal_id, title, anime_mal_id } = req.body;
+    const { chapter_mal_id, id_chapter, title, anime_mal_id } = req.body;
     try {
       const anime = await AnimeModel.findOne({
         where: {
@@ -208,6 +207,7 @@ app.post(
       }
       const chapter = await ChapterModel.create({
         chapter_mal_id: chapter_mal_id,
+        id_chapter,
         title,
         anime_mal_id: anime_mal_id,
       });
