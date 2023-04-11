@@ -1,0 +1,35 @@
+{
+  "name": "animelist-app-backend",
+  "version": "0.0.1",
+  "description": "Backend for anime list app",
+  "author": "Adan Perez Rodriguez",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js",
+    "dev": "nodemon start.js"
+  }, 
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.29.3",
+    "sqlite3": "^5.1.6"
+  },
+  "pkg": {
+    "scripts": "start.js",
+    "assets": [
+      "models/*",
+      "node_modules/**/*",
+      "animeDB.sqlite",
+      "database.js"
+    ],
+    "targets": [
+      "node14-win-x64",
+      "node14-macos-x64",
+      "node14-linux-x64"
+    ]
+  }
+}
