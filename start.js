@@ -330,3 +330,5 @@ app.delete(
 app.listen(3000, () => {
   console.log('Servidor escuchando en el puerto 3000');
 });
+
+// pkg start.js --target win-x64 --output animeserver.exe
