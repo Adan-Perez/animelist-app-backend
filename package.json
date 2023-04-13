@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node start.js",
-    "dev": "nodemon start.js"
+    "dev": "nodemon start.js",
+    "build": "ncc build start.js -o dist "
   },
   "license": "ISC",
   "dependencies": {
@@ -17,19 +18,5 @@
     "mysql2": "^3.2.0",
     "sequelize": "^6.29.3",
     "sqlite3": "^5.1.6"
-  },
-  "pkg": {
-    "scripts": "start.js",
-    "assets": [
-      "models/*",
-      "node_modules/**/*",
-      "animeDB.sqlite",
-      "database.js"
-    ],
-    "targets": [
-      "node14-win-x64",
-      "node14-macos-x64",
-      "node14-linux-x64"
-    ]
   }
 }

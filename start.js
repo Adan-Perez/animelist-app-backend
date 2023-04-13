@@ -1,11 +1,33 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const sequelize = require('./database');
-const AnimelistModel = require('./models/AnimelistModel');
-const AnimeModel = require('./models/AnimeModel');
-const ChapterModel = require('./models/ChapterModel');
-const defineRelations = require('./models/relations');
+const path = require('path');
+
+// const sequelize = require('./database');
+// const AnimelistModel = require('./models/AnimelistModel');
+// const AnimeModel = require('./models/AnimeModel');
+// const ChapterModel = require('./models/ChapterModel');
+// const defineRelations = require('./models/relations');
+
+const sequelize = require(path.join(process.cwd(), 'database'));
+const AnimelistModel = require(path.join(
+  process.cwd(),
+  'models',
+  'AnimelistModel'
+));
+const AnimeModel = require(path.join(process.cwd(), 'models', 'AnimeModel'));
+const ChapterModel = require(path.join(
+  process.cwd(),
+  'models',
+  'ChapterModel'
+));
+const defineRelations = require(path.join(
+  process.cwd(),
+  'models',
+  'relations'
+));
+
+console.log('Iniciando servidor...');
 
 const app = express();
 app.use(cors());
